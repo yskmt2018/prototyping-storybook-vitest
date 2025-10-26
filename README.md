@@ -1,48 +1,46 @@
 # prototyping-storybook-vitest
 
-This template should help get you started developing with Vue 3 in Vite.
+Vue と Storybook、Vitest によるフロントエンド・プロトタイピング
 
-## Recommended IDE Setup
+## 環境構築
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- OS：Windows 11
+- IDE：Visual Studio Code
 
-## Recommended Browser Setup
+### Node.js のインストール
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- [Node.js のウェブサイト](https://nodejs.org/ja) からインストーラをダウンロードしてインストール
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+```bash
+node --version # v25.0.0
+npm --version  # 11.6.2
 ```
 
-### Compile and Hot-Reload for Development
+### 本プロジェクトのセットアップ
 
-```sh
-npm run dev
+```bash
+git clone https://github.com/yskmt2018/prototyping-storybook-vitest.git
+cd prototyping-storybook-vitest
+
+npm install # Project Setup
+npm run dev # Compile and Hot-Reload for Development
 ```
 
-### Type-Check, Compile and Minify for Production
+### 参考：本プロジェクトの初期構築コマンド
 
-```sh
-npm run build
+```bash
+npm create vue@latest
+
+ Project name (target directory): # prototyping-storybook-vitest
+ Select features to include in your project: # TypeScript, Vitest (unit testing), Prettier (code formatting)
+ Select experimental features to include in your project: # none
+ Skip all example code and start with a blank Vue project? # Yes
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+## リファレンス
 
-```sh
-npm run test:unit
-```
+- [Vue](https://ja.vuejs.org/)
+
+- [Storybook](https://storybook.js.org/)
+
+- [Vitest](https://vitest.dev/)
