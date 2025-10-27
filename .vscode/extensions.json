@@ -1,5 +1,6 @@
 {
   "recommendations": [
+    "MS-CEINTL.vscode-language-pack-ja",
     "Vue.volar",
     "vitest.explorer",
     "esbenp.prettier-vscode"
