@@ -1,11 +1,19 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
-</template>
+  <v-app id="prototype">
+    <!-- 簡易的な横幅調整のため両サイドに配置 -->
+    <v-navigation-drawer location="left" color="grey-lighten-3" />
+    <v-navigation-drawer location="right" color="grey-lighten-3" />
 
-<style scoped></style>
+    <v-app-bar></v-app-bar>
+
+    <v-main></v-main>
+
+    <v-footer app border>
+      <v-spacer />
+      <v-icon icon="mdi-github" start />
+      yskmt2018 (Yusuke Muto)
+    </v-footer>
+  </v-app>
+</template>
