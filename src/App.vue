@@ -6,7 +6,11 @@
     <v-navigation-drawer location="left" color="grey-lighten-3" />
     <v-navigation-drawer location="right" color="grey-lighten-3" />
 
-    <v-app-bar></v-app-bar>
+    <v-app-bar>
+      <v-app-bar-title>
+        VueとStorybook、Vitestによるフロントエンド・プロトタイピング
+      </v-app-bar-title>
+    </v-app-bar>
 
     <v-main></v-main>
 
