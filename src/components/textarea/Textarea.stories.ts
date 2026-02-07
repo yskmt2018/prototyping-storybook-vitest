@@ -12,6 +12,9 @@ const meta = {
     },
     template: '<Textarea v-bind="args" />',
   }),
+  argTypes: {
+    color: { control: 'select', options: ['primary', 'secondary', 'tertiary'] },
+  },
   args: {
     inputted: '',
     width: 400,
