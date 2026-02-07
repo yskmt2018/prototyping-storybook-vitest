@@ -10,7 +10,7 @@ const meta = {
     setup() {
       return { args }
     },
-    template: '<Textarea v-bind="args" />',
+    template: '<Textarea :args />',
   }),
   argTypes: {
     color: { control: 'select', options: ['primary', 'secondary', 'tertiary'] },
@@ -25,9 +25,11 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
+export const Standard: Story = {
   args: {
-    title: 'デフォルト',
+    title: 'テキストエリア',
+    hint: '1 行以上のテキストを入力する場合に使用します。',
+    placeholder: 'Hello World',
   },
 }
 
@@ -35,13 +37,20 @@ export const Disabled: Story = {
   args: {
     title: '非活性フラグ有効',
     disabled: true,
+    inputted: 'Hello',
   },
 }
 
-export const WithHintAndPlaceholder: Story = {
+export const Secondary: Story = {
   args: {
-    title: 'ヒントと入力欄のプレースホルダあり',
-    hint: '1 行以上のテキストを入力する場合に使用します。',
-    placeholder: 'Hello World',
+    title: 'セカンダリカラー',
+    color: 'secondary',
+  },
+}
+
+export const Tertiary: Story = {
+  args: {
+    title: 'ターシャリカラー',
+    color: 'tertiary',
   },
 }
