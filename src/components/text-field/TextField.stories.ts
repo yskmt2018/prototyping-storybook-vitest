@@ -1,0 +1,44 @@
+import type { Meta, StoryObj } from '@storybook/vue3-vite'
+
+import TextField from './TextField.vue'
+
+const meta = {
+  title: 'Components/TextField',
+  component: TextField,
+  render: (args: any) => ({
+    components: { TextField },
+    setup() {
+      return { args }
+    },
+    template: '<TextField v-bind="args" />',
+  }),
+  args: {
+    inputted: '',
+    width: 400,
+  },
+  tags: ['autodocs'],
+} satisfies Meta<typeof TextField>
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+export const Default: Story = {
+  args: {
+    title: 'デフォルト',
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    title: '非活性フラグ有効',
+    disabled: true,
+  },
+}
+
+export const WithHintAndPlaceholder: Story = {
+  args: {
+    title: 'ヒントと入力欄のプレースホルダあり',
+    hint: '1 行以内のテキストを入力する場合に使用します。',
+    placeholder: 'Hello World',
+  },
+}
