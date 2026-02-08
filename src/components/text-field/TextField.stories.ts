@@ -1,0 +1,56 @@
+import type { Meta, StoryObj } from '@storybook/vue3-vite'
+
+import TextField from './TextField.vue'
+
+const meta = {
+  title: 'Components/TextField',
+  component: TextField,
+  render: (args: any) => ({
+    components: { TextField },
+    setup() {
+      return { args }
+    },
+    template: '<TextField :args />',
+  }),
+  argTypes: {
+    color: { control: 'select', options: ['primary', 'secondary', 'tertiary'] },
+  },
+  args: {
+    inputted: '',
+    width: 400,
+  },
+  tags: ['autodocs'],
+} satisfies Meta<typeof TextField>
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+export const Standard: Story = {
+  args: {
+    title: 'テキストフィールド',
+    hint: '1 行以内のテキストを入力する場合に使用します。',
+    placeholder: 'Hello World',
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    title: '非活性フラグ有効',
+    disabled: true,
+    inputted: 'Hello',
+  },
+}
+
+export const Secondary: Story = {
+  args: {
+    title: 'セカンダリカラー',
+    color: 'secondary',
+  },
+}
+
+export const Tertiary: Story = {
+  args: {
+    title: 'ターシャリカラー',
+    color: 'tertiary',
+  },
+}
