@@ -25,17 +25,15 @@ const selected = defineModel<string>('selected', { required: true })
   <div>
     <div class="text-h6">{{ title }}</div>
     <div class="text-caption" v-if="hint">{{ hint }}</div>
-    <v-select
-      v-model:model-value="selected"
-      :items="choices"
-      item-title="label"
-      item-value="value"
-      :disabled
-      :width
-      :color
-      density="compact"
-      hide-details="auto"
-      base-color="tertiary"
-    ></v-select>
+    <v-radio-group v-model:model-value="selected" :disabled :width hide-details="auto">
+      <v-radio
+        v-for="choice in choices"
+        :key="choice.value"
+        :label="choice.label"
+        :value="choice.value"
+        :color
+        base-color="tertiary"
+      ></v-radio>
+    </v-radio-group>
   </div>
 </template>

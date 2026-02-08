@@ -27,10 +27,10 @@ const inputted = defineModel<string>('inputted', { required: true })
     <div class="text-caption" v-if="hint">{{ hint }}</div>
     <v-text-field
       v-model:model-value="inputted"
-      :disabled="disabled"
-      :placeholder="placeholder"
-      :width="width"
-      :color="color"
+      :disabled
+      :placeholder
+      :width
+      :color
       density="compact"
       hide-details="auto"
       base-color="tertiary"
