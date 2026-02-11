@@ -10,9 +10,11 @@ const meta = {
     setup() {
       return { args }
     },
-    template: '<RadioButton :args />',
+    template: '<RadioButton v-bind="args" />',
   }),
   argTypes: {
+    disabled: { control: 'boolean' },
+    width: { control: { type: 'range', min: 200, max: 800, step: 100 } },
     color: { control: 'select', options: ['primary', 'secondary', 'tertiary'] },
   },
   args: {
