@@ -10,12 +10,15 @@ const meta = {
     setup() {
       return { args }
     },
-    template: '<Checkbox :args />',
+    template: '<Checkbox v-bind="args" />',
   }),
   argTypes: {
+    disabled: { control: 'boolean' },
+    width: { control: { type: 'range', min: 200, max: 800, step: 100 } },
     color: { control: 'select', options: ['primary', 'secondary', 'tertiary'] },
   },
   args: {
+    title: '',
     selected: [],
     width: 400,
     choices: [

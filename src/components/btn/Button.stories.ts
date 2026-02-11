@@ -12,12 +12,14 @@ const meta = {
     setup() {
       return { args }
     },
-    template: '<Button :args />',
+    template: '<Button v-bind="args" />',
   }),
   argTypes: {
+    disabled: { control: 'boolean' },
     importance: { control: 'select', options: ['primary', 'secondary', 'tertiary'] },
   },
   args: {
+    text: '',
     onClick: fn(),
   },
   tags: ['autodocs'],
