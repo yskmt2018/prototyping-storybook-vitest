@@ -19,6 +19,7 @@ const meta = {
     importance: { control: 'select', options: ['primary', 'secondary', 'tertiary'] },
   },
   args: {
+    text: '',
     onClick: fn(),
   },
   tags: ['autodocs'],

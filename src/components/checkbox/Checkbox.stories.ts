@@ -18,6 +18,7 @@ const meta = {
     color: { control: 'select', options: ['primary', 'secondary', 'tertiary'] },
   },
   args: {
+    title: '',
     selected: [],
     width: 400,
     choices: [
