@@ -28,4 +28,10 @@ describe('Button', () => {
     const wrapper = mountTarget({ text: '非活性', disabled: true })
     expect(wrapper.get('button').element.disabled).toBe(true)
   })
+
+  it('クリックアクションを通知できる', async () => {
+    const wrapper = mountTarget({ text: 'クリック' })
+    await wrapper.get('button').trigger('click')
+    expect(wrapper.emitted('click')).toHaveLength(1)
+  })
 })
