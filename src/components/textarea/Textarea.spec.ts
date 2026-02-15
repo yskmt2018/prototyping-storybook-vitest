@@ -32,4 +32,11 @@ describe('Textarea', () => {
     const wrapper = mountTarget({ title: '非活性フラグ有効', disabled: true })
     expect(wrapper.get('textarea').element.disabled).toBe(true)
   })
+
+  it('入力された文字列を通知できる', async () => {
+    const value = 'Hello World'
+    const wrapper = mountTarget({ title: '入力文字列通知' })
+    await wrapper.get('textarea').setValue(value)
+    expect(wrapper.emitted('update:inputted')).toEqual([[value]])
+  })
 })
