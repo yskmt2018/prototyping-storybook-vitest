@@ -1,21 +1,20 @@
 <script setup lang="ts">
-withDefaults(
-  defineProps<{
-    /** タイトル */
-    title: string
-    /** ヒント */
-    hint?: string
-    /** 非活性フラグ */
-    disabled?: boolean
-    /** 入力欄のプレースホルダ */
-    placeholder?: string
-    /** コンポーネントの横幅 */
-    width: string | number
-    /** 色指定 */
-    color?: 'primary' | 'secondary' | 'tertiary'
-  }>(),
-  { color: 'primary' },
-)
+export type TextFieldProps = {
+  /** タイトル */
+  title: string
+  /** ヒント */
+  hint?: string
+  /** 非活性フラグ */
+  disabled?: boolean
+  /** 入力欄のプレースホルダ */
+  placeholder?: string
+  /** コンポーネントの横幅 */
+  width?: string | number
+  /** 色指定 */
+  color?: 'primary' | 'secondary' | 'tertiary'
+}
+
+withDefaults(defineProps<TextFieldProps>(), { width: 400, color: 'primary' })
 
 /** 入力された文字列 */
 const inputted = defineModel<string>('inputted', { required: true })

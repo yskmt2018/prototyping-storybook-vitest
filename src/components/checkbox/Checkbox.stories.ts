@@ -20,7 +20,6 @@ const meta = {
   args: {
     title: '',
     selected: [],
-    width: 400,
     choices: [
       { label: '選択肢 1', value: 'option1' },
       { label: '選択肢 2', value: 'option2' },

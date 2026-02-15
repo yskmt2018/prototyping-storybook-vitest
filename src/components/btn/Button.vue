@@ -1,17 +1,16 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-const props = withDefaults(
-  defineProps<{
-    /** テキスト */
-    text: string
-    /** 非活性フラグ */
-    disabled?: boolean
-    /** ボタンの重要度 */
-    importance?: 'primary' | 'secondary' | 'tertiary'
-  }>(),
-  { importance: 'primary' },
-)
+export type ButtonProps = {
+  /** テキスト */
+  text: string
+  /** 非活性フラグ */
+  disabled?: boolean
+  /** ボタンの重要度 */
+  importance?: 'primary' | 'secondary' | 'tertiary'
+}
+
+const props = withDefaults(defineProps<ButtonProps>(), { importance: 'primary' })
 
 // クリックアクションを通知
 defineEmits(['click'])
