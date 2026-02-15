@@ -26,6 +26,8 @@ npm install # Project Setup
 npm run dev # Compile and Hot-Reload for Development
 
 npm run storybook # To run Storybook
+
+npm run test # To run Vitest
 ```
 
 ### 参考：本プロジェクトの初期構築コマンド
@@ -45,6 +47,9 @@ npm install vite-plugin-vue-devtools@7.7.9
 npm create storybook@latest
 
  What configuration should we install? # Minimal: Just the essentials for component development.
+
+# Vitest
+npm install --save-dev resize-observer-polyfill
 
 # Vuetify
 npm install vuetify

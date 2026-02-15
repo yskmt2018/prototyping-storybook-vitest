@@ -20,7 +20,6 @@ const meta = {
   args: {
     title: '',
     inputted: '',
-    width: 400,
   },
   tags: ['autodocs'],
 } satisfies Meta<typeof TextField>

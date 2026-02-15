@@ -1,21 +1,20 @@
 <script setup lang="ts">
-withDefaults(
-  defineProps<{
-    /** タイトル */
-    title: string
-    /** ヒント */
-    hint?: string
-    /** 選択肢のリスト（ラベル、識別子） */
-    choices: { label: string; value: string }[]
-    /** 非活性フラグ */
-    disabled?: boolean
-    /** コンポーネントの横幅 */
-    width: string | number
-    /** 色指定 */
-    color?: 'primary' | 'secondary' | 'tertiary'
-  }>(),
-  { color: 'primary' },
-)
+export type SelectboxProps = {
+  /** タイトル */
+  title: string
+  /** ヒント */
+  hint?: string
+  /** 選択肢のリスト（ラベル、識別子） */
+  choices: { label: string; value: string }[]
+  /** 非活性フラグ */
+  disabled?: boolean
+  /** コンポーネントの横幅 */
+  width?: string | number
+  /** 色指定 */
+  color?: 'primary' | 'secondary' | 'tertiary'
+}
+
+withDefaults(defineProps<SelectboxProps>(), { width: 400, color: 'primary' })
 
 /** 選択された識別子 */
 const selected = defineModel<string>('selected', { required: true })
