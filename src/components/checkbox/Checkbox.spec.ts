@@ -33,11 +33,11 @@ describe('Checkbox', () => {
     const wrapper = mountTarget({ title, hint, choices })
     expect(wrapper.text()).toContain(title)
     expect(wrapper.text()).toContain(hint)
-    choices.forEach((c) => expect(wrapper.text()).toContain(c.label))
+    choices.forEach((choice) => expect(wrapper.text()).toContain(choice.label))
   })
 
   it('非活性フラグが有効な場合に非活性化できる', () => {
     const wrapper = mountTarget({ title: '非活性フラグ有効', disabled: true, choices })
-    expect(wrapper.findAll('input').every((i) => i.element.disabled)).toBe(true)
+    expect(wrapper.findAll('input').every((ipt) => ipt.element.disabled)).toBe(true)
   })
 })
