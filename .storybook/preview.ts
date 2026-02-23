@@ -11,10 +11,7 @@ import * as directives from 'vuetify/directives'
 import '@mdi/font/css/materialdesignicons.css'
 
 setup((app) => {
-  const vuetify = createVuetify({
-    components,
-    directives,
-  })
+  const vuetify = createVuetify({ components, directives })
   app.use(vuetify)
 })
 

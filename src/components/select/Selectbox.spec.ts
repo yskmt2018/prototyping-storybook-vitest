@@ -39,6 +39,6 @@ describe('Selectbox', () => {
 
   it('非活性フラグが有効な場合に非活性化できる', () => {
     const wrapper = mountTarget({ title: '非活性フラグ有効', disabled: true, choices })
-    expect(wrapper.findAll('input').every((i) => i.element.disabled)).toBe(true)
+    expect(wrapper.findAll('input').every((ipt) => ipt.element.disabled)).toBe(true)
   })
 })

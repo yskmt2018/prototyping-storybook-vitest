@@ -10,9 +10,6 @@ import '@mdi/font/css/materialdesignicons.css'
 // Components
 import App from './App.vue'
 
-const vuetify = createVuetify({
-  components,
-  directives,
-})
+const vuetify = createVuetify({ components, directives })
 
 createApp(App).use(vuetify).mount('#app')
