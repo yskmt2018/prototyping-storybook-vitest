@@ -28,9 +28,11 @@ describe('TextField', () => {
     expect(wrapper.get('input').attributes('placeholder')).toBe(placeholder)
   })
 
-  it('非活性フラグが有効な場合に非活性化できる', () => {
+  it('非活性フラグが有効な場合に非活性化できる', async () => {
     const wrapper = mountTarget({ title: '非活性フラグ有効', disabled: true })
+    await wrapper.get('input').setValue('Hello World')
     expect(wrapper.get('input').element.disabled).toBe(true)
+    expect(wrapper.emitted('update:inputted')).toBeUndefined()
   })
 
   it('入力された文字列を通知できる', async () => {
