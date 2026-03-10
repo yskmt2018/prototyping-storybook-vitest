@@ -24,9 +24,11 @@ describe('Button', () => {
     expect(wrapper.text()).toContain(text)
   })
 
-  it('非活性フラグが有効な場合に非活性化できる', () => {
+  it('非活性フラグが有効な場合に非活性化できる', async () => {
     const wrapper = mountTarget({ text: '非活性', disabled: true })
+    await wrapper.get('button').trigger('click')
     expect(wrapper.get('button').element.disabled).toBe(true)
+    expect(wrapper.emitted('click')).toBeUndefined()
   })
 
   it('クリックアクションを通知できる', async () => {
