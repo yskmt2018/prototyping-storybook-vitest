@@ -2,12 +2,12 @@ import type { Meta, StoryObj } from '@storybook/vue3-vite'
 
 import { fn } from 'storybook/test'
 
-import Button from './Button.vue'
+import Button, { type ButtonProps } from './Button.vue'
 
 const meta = {
   title: 'Components/Button',
   component: Button,
-  render: (args: any) => ({
+  render: (args: ButtonProps) => ({
     components: { Button },
     setup() {
       return { args }
@@ -15,11 +15,16 @@ const meta = {
     template: '<Button v-bind="args" />',
   }),
   argTypes: {
-    disabled: { control: 'boolean' },
-    importance: { control: 'select', options: ['primary', 'secondary', 'tertiary'] },
+    text: { control: 'text', description: 'テキスト' },
+    disabled: { control: 'boolean', description: '非活性フラグ' },
+    importance: {
+      control: 'select',
+      options: ['primary', 'secondary', 'tertiary'],
+      description: 'ボタンの重要度',
+    },
   },
   args: {
-    text: '',
+    // クリックアクションを通知
     onClick: fn(),
   },
   tags: ['autodocs'],
