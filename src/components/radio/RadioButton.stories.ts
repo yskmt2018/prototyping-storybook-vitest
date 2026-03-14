@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 
-import RadioButton from './RadioButton.vue'
+import RadioButton, { type RadioButtonProps } from './RadioButton.vue'
 
 const meta = {
   title: 'Components/RadioButton',
   component: RadioButton,
-  render: (args: any) => ({
+  render: (args: RadioButtonProps) => ({
     components: { RadioButton },
     setup() {
       return { args }
@@ -13,18 +13,28 @@ const meta = {
     template: '<RadioButton v-bind="args" />',
   }),
   argTypes: {
-    disabled: { control: 'boolean' },
-    width: { control: { type: 'range', min: 200, max: 800, step: 100 } },
-    color: { control: 'select', options: ['primary', 'secondary', 'tertiary'] },
+    title: { control: 'text', description: 'タイトル' },
+    hint: { control: 'text', description: 'ヒント' },
+    disabled: { control: 'boolean', description: '非活性フラグ' },
+    width: {
+      control: { type: 'range', min: 200, max: 800, step: 100 },
+      description: 'コンポーネントの横幅',
+    },
+    color: {
+      control: 'select',
+      options: ['primary', 'secondary', 'tertiary'],
+      description: '色指定',
+    },
   },
   args: {
-    title: '',
-    selected: '',
+    // 選択肢のリスト（ラベル、識別子）
     choices: [
       { label: '選択肢 1', value: 'option1' },
       { label: '選択肢 2', value: 'option2' },
       { label: '選択肢 3', value: 'option3' },
     ],
+    // 選択された識別子
+    selected: '',
   },
   tags: ['autodocs'],
 } satisfies Meta<typeof RadioButton>

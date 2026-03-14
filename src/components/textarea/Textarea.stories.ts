@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 
-import Textarea from './Textarea.vue'
+import Textarea, { type TextareaProps } from './Textarea.vue'
 
 const meta = {
   title: 'Components/Textarea',
   component: Textarea,
-  render: (args: any) => ({
+  render: (args: TextareaProps) => ({
     components: { Textarea },
     setup() {
       return { args }
@@ -13,12 +13,22 @@ const meta = {
     template: '<Textarea v-bind="args" />',
   }),
   argTypes: {
-    disabled: { control: 'boolean' },
-    width: { control: { type: 'range', min: 200, max: 800, step: 100 } },
-    color: { control: 'select', options: ['primary', 'secondary', 'tertiary'] },
+    title: { control: 'text', description: 'タイトル' },
+    hint: { control: 'text', description: 'ヒント' },
+    disabled: { control: 'boolean', description: '非活性フラグ' },
+    placeholder: { control: 'text', description: '入力欄のプレースホルダ' },
+    width: {
+      control: { type: 'range', min: 200, max: 800, step: 100 },
+      description: 'コンポーネントの横幅',
+    },
+    color: {
+      control: 'select',
+      options: ['primary', 'secondary', 'tertiary'],
+      description: '色指定',
+    },
+    inputted: { control: 'text', description: '入力された文字列' },
   },
   args: {
-    title: '',
     inputted: '',
   },
   tags: ['autodocs'],

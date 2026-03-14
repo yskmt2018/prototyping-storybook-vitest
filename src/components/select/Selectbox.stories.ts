@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 
-import Selectbox from './Selectbox.vue'
+import Selectbox, { type SelectboxProps } from './Selectbox.vue'
 
 const meta = {
   title: 'Components/Selectbox',
   component: Selectbox,
-  render: (args: any) => ({
+  render: (args: SelectboxProps) => ({
     components: { Selectbox },
     setup() {
       return { args }
@@ -13,13 +13,21 @@ const meta = {
     template: '<Selectbox v-bind="args" />',
   }),
   argTypes: {
-    disabled: { control: 'boolean' },
-    width: { control: { type: 'range', min: 200, max: 800, step: 100 } },
-    color: { control: 'select', options: ['primary', 'secondary', 'tertiary'] },
+    title: { control: 'text', description: 'タイトル' },
+    hint: { control: 'text', description: 'ヒント' },
+    disabled: { control: 'boolean', description: '非活性フラグ' },
+    width: {
+      control: { type: 'range', min: 200, max: 800, step: 100 },
+      description: 'コンポーネントの横幅',
+    },
+    color: {
+      control: 'select',
+      options: ['primary', 'secondary', 'tertiary'],
+      description: '色指定',
+    },
   },
   args: {
-    title: '',
-    selected: '',
+    // 選択肢のリスト（ラベル、識別子）
     choices: [
       { label: '選択肢 1', value: 'option1' },
       { label: '選択肢 2', value: 'option2' },
@@ -29,6 +37,8 @@ const meta = {
       { label: '選択肢 6', value: 'option6' },
       { label: '選択肢 7', value: 'option7' },
     ],
+    // 選択された識別子
+    selected: '',
   },
   tags: ['autodocs'],
 } satisfies Meta<typeof Selectbox>
