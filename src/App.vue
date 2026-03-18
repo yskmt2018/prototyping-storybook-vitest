@@ -12,7 +12,11 @@
       </v-app-bar-title>
     </v-app-bar>
 
-    <v-main></v-main>
+    <v-main>
+      <v-container>
+        <!-- メインコンテンツエリアは空にしています -->
+      </v-container>
+    </v-main>
 
     <v-footer app border>
       <v-spacer />
