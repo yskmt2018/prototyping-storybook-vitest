@@ -1,5 +1,7 @@
 # Components
 
+## Catalog
+
 - btn/：ボタン（`Button`）
 - checkbox/：チェックボックス（`Checkbox`）
 - radio/：ラジオボタン（`RadioButton`）
